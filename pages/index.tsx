@@ -1,32 +1,31 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import React from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="min-h-screen bg-gray-100 p-4">
       <Head>
-        <title>Frontend interview questions</title>
-        <meta name="description" content="Next.js with TypeScript and Tailwind CSS" />
+        <title>前端面试练习</title>
+        <meta name="description" content="前端面试练习项目" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
+      <main className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
+        <h1 className="text-3xl font-bold text-center mb-6">前端面试练习</h1>
+        
+        <div className="space-y-4">
+          <div className="p-4 bg-blue-50 rounded-lg">
+            <h2 className="text-xl font-bold mb-2">数独游戏</h2>
+            <p className="text-gray-600 mb-4">
+              一个使用 React 和 TypeScript 实现的数独游戏，包含计时器、难度选择和错误检查功能。
+            </p>
+            <Link href="/sudoku" className="text-blue-500 hover:text-blue-700 underline">
+              开始游戏 →
+            </Link>
+          </div>
+        </div>
       </main>
     </div>
-  )
+  );
 }
-
-export default Home 
