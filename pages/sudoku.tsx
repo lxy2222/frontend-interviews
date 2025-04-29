@@ -9,7 +9,7 @@ import classNames from "classnames";
 const emptyBoard = Array.from({ length: 9 }, () => Array(9).fill(0));
 const SudokuGame = () => {
   const [board, setBoard] = useState(emptyBoard);
-  const [selectedCell, setSelectedCell] = useState<[number, number] | null>(null);
+  // const [selectedCell, setSelectedCell] = useState<[number, number] | null>(null);
   const [initialPositions, setInitialPositions] = useState(Array.from({ length: 9}, () => Array(9).fill(false)));
 
   // 预先计算每个行、列和方块的可用数字
@@ -34,8 +34,10 @@ const SudokuGame = () => {
     return [1, 2, 3, 4, 5, 6, 7, 8, 9].filter(num => !used.has(num));
   };
 
+  // todo optimize the algorithm
   const generateSolution = (): number[][] => {
     const newBoard = Array.from({ length: 9 }, () => Array(9).fill(0));
+
     const solve = (board: number[][]): boolean => {
       // 找到下一个空格
       let row = -1, col = -1;
