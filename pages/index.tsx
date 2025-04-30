@@ -24,6 +24,13 @@ export default function Home() {
               开始游戏 →
             </Link>
           </div>
+          <div className="p-4 bg-blue-50 rounded-lg">
+            <h2 className="text-xl font-bold mb-2">轮播图</h2>
+            <p className="text-gray-600 mb-4">
+              一个使用 React 和 TypeScript 实现的轮播图，包含自动播放和手动切换功能。
+            </p>
+            <Link href="/carousel" className="text-blue-500 hover:text-blue-700 underline"></Link>
+          </div>
         </div>
       </main>
     </div>
